@@ -1,0 +1,289 @@
+/* common.css: 사이트 전체 공통 (헤더는 도메인별로 main.css/customer.css에 분리) */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* 1. Layout & Grid */
+    --site-max-width: 1360px;
+    --gutter-desktop: 40px;
+    --gutter-mobile: 20px;
+
+    /* 2. Typography Scale */
+    --fs-body: 16px;
+    --fs-subhead: 20px;
+    --fs-heading: 24px;
+
+    /* 2-1. */
+    --fs-12: 12px;
+    --fs-13: 13px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-17: 17px;
+    --fs-18: 18px;
+    --fs-30: 30px;
+    --fs-32: 32px;
+    --fs-36: 36px;
+
+    /* 3. Brand Colors */
+    --np-primary: #0056C6;     /* 메인 블루 (버튼, 활성 탭) */
+    --np-dark: #0A1B3A;        /* 딥 네이비 (GNB, 다크 섹션) */
+    --np-text: #0F172A;        /* 본문 주요 텍스트 */
+    --np-sub: #444;         /* 보조 설명 텍스트 */
+    --np-mute: #666;        /* 캡션, 연도, 부연 설명 */
+    --np-dim: #999;        /* 약한 텍스트 */
+    --np-bg: #f9f9fb;          /* 섹션 교차 배경 */
+    --np-line: #eee;        /* 헤어라인 구분선 */
+
+    /* 4. 푸터 */
+    --np-foot-line: #333;      /* 푸터 구분선 */
+    --np-foot-text: #ccc;      /* 푸터 링크/텍스트 */
+}
+body {
+    font-size: var(--fs-body);
+    line-height: 1.7;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serif;
+    color: var(--np-text);
+    background: #fff;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+ul, li { list-style: none; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+html { scroll-behavior: smooth; }
+
+
+.container {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding-left: var(--gutter-desktop);
+    padding-right: var(--gutter-desktop);
+}
+
+.tit_subject {
+    display: block;
+    padding-top: 32px;
+    line-height: 24px;
+    color: var(--np-text);
+    font-weight: 800;
+    font-size: var(--fs-subhead);
+    margin-bottom: 14px;
+}
+.tit_subject.fst { padding-top: 6px; }
+
+.desc_g {
+    line-height: 26px;
+    font-size: var(--fs-body);
+    color: var(--np-sub);
+    margin-bottom: 15px;
+}
+
+/* 푸터 */
+.wrap_foot { background: #1e1e1e; }
+
+.wrap_foot .inner {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 40px var(--gutter-desktop);
+}
+
+.tit_foot_company {
+    display: block;
+    font-size: var(--fs-body);
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.list_foot_link {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    margin-bottom: 20px;
+}
+.list_foot_link li { font-size: var(--fs-body); color: #888; }
+
+.list_foot_link li:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #555;
+    margin: 0 12px;
+    vertical-align: middle;
+}
+.list_foot_link a:hover { color: #fff; text-decoration: underline;}
+.list_foot_link li .txt_bold{ font-weight: 800;  color: var(--np-foot-text);}
+
+.box_publisher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    margin-bottom: 20px;
+}
+.box_publisher p { font-size: var(--fs-body); line-height: 1.7; color: #888; }
+.box_publisher p strong { color: #aaa; }
+
+.foot_top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--np-foot-line);
+}
+.foot_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--np-foot-line);
+}
+.box_foot_right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.list_site_link { display: flex; flex-wrap: wrap; gap: 10px; }
+.list_site_link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--np-sub);
+    border-radius: 4px;
+    font-size: var(--fs-body);
+    color: var(--np-foot-text);
+}
+.list_site_link a::after { content: '→'; }
+.list_site_link a:hover { background: var(--np-primary); color: #fff; }
+
+.sel_family {
+    height: 44px;
+    padding: 0 40px; 
+    background: #2a2a2a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ccc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    border: 1px solid var(--np-sub);
+    border-radius: 4px;
+    color: var(--np-foot-text);
+    font-size: var(--fs-body);
+    font-family: inherit;
+    cursor: pointer;
+}
+.sel_family:hover { border-color: var(--np-mute); }
+
+.txt_copyright { font-size: var(--fs-body); color: #777; }
+
+/* 푸터 SNS 공통 */
+.list_sns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.list_sns li {
+    display: flex;
+    align-items: center;
+}
+
+.list_sns a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; 
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(0.7);
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.list_sns a span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.list_sns a.youtube {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E");
+}
+.list_sns a.facebook {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E");
+}
+.list_sns a.twitter {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E");
+}
+.list_sns a.naverblog {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M16.273 12.845L7.376 0H0v24h7.726V11.155L16.624 24H24V0h-7.727v12.845z'/%3E%3C/svg%3E");
+}
+.list_sns a.instagram {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/%3E%3C/svg%3E");
+}
+.list_sns a.rss {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20 5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56m0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z'/%3E%3C/svg%3E");
+}
+
+
+.link_ethics {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+.link_ethics img {
+    height: 20px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(0.7);
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.list_sns a:hover , .link_ethics:hover img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    :root {
+    --fs-subhead: 18px;
+    --fs-heading: 22px;
+    }
+    .container,
+    .wrap_foot .inner {
+        padding-left: var(--gutter-mobile);
+        padding-right: var(--gutter-mobile);
+    }
+    .foot_top { flex-direction: column; align-items: stretch; }
+    .list_site_link { flex-direction: column; }
+    .list_site_link a { display: flex; justify-content: space-between;  padding: 0 16px; height: 48px; font-size: var(--fs-14);}
+    .sel_family { width: 100%; height: 48px; padding: 0 16px; background-position: right 16px center; font-size: var(--fs-14);}
+    .box_publisher { flex-direction: column; gap: 12px; }
+    .box_publisher p { font-size: var(--fs-13); }
+    .foot_bottom { flex-direction: column; align-items: flex-start; }
+    .txt_copyright { font-size: var(--fs-13); }
+    .tit_foot_company { font-size: var(--fs-15); }
+    .list_foot_link li { font-size: var(--fs-14); }
+}

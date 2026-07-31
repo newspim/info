@@ -1,0 +1,354 @@
+.sec_customer{padding: 0 0 120px;}
+
+/* ---- 고객센터 헤더 (상단 고정) ---- */
+.wrap_head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--np-line);
+    background: #fff;
+}
+
+.wrap_head .inner {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    height: 70px;
+    padding: 0 var(--gutter-desktop);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main { margin-top: 70px; min-height: calc(100vh - 70px - 460px) }
+
+.tit_logo {
+    display: flex;
+    align-items: center;
+}
+
+.tit_logo img {
+    height: 27px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.tit_logo .txt_logo_sub {
+    display: inline-block;
+    margin-left: 8px;
+    padding-left: 8px;
+    border-left: 1px solid var(--np-line);
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--np-dim);
+    line-height: 1;
+}
+
+.util_login {
+    display: flex;
+    align-items: center;
+}
+.util_login li { font-size: var(--fs-14); color: var(--np-mute); }
+.util_login li:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: var(--np-line);
+    margin: 0 12px;
+    vertical-align: middle;
+}
+.util_login a:hover { color: var(--np-primary); font-weight: bold; }
+
+/* ---- customer 7개 페이지 공통 (탭 메뉴) ---- */
+.tab_policy {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    flex-wrap: wrap;
+}
+.tab_policy li {
+    position: relative;
+    flex: 1;
+    min-width: 120px;
+    height: 48px;
+    margin-right: -1px;
+    border: 1px solid var(--np-line);
+    text-align: center;
+    line-height: 46px;
+}
+.tab_policy a { display: block; color: var(--np-mute); font-size: var(--fs-14); }
+.tab_policy .on { z-index: 1; border-color: var(--np-text); background-color: var(--np-text); }
+.tab_policy .on a { color: #fff; font-weight: bold; }
+.tab_policy a:hover { font-weight: bold; }
+
+/* ---- customer 5개 페이지 공통 (조항 번호 리스트) ---- */
+.list_1depth { padding-left: 20px; margin-top: 5px; margin-bottom: 20px; }
+.list_1depth > li { padding-top: 12px; line-height: 26px; font-size: var(--fs-body); color: var(--np-sub); }
+.list_1depth .txt_num { display: inline-block; font-weight: normal; color: var(--np-text); }
+
+.list_2depth_type2 { padding: 5px 0 0 35px; }
+.list_2depth_type2 li { font-size: var(--fs-body); line-height: 26px; padding-top: 2px; color: var(--np-sub); }
+.list_2depth_type2 .txt_num {
+    display: inline-block;
+    min-width: 15px;
+    margin: 0 4px 0 -22px;
+    vertical-align: top;
+    font-weight: normal;
+    color: var(--np-mute);
+}
+
+.list_2depth_noti {
+    margin-top: 80px;
+    border-top: 1px solid var(--np-line);
+    padding-top: 20px;
+    font-size: var(--fs-body);
+    color: var(--np-sub);
+}
+
+.wrap_terms { margin-top: 40px; }
+
+/* ---- customer 4개 페이지 공통 (담당자 안내 박스) ---- */
+.tit_contact {
+    display: block;
+    font-size: var(--fs-body);
+    font-weight: bold;
+    color: var(--np-text);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+.tit_contact.fst { margin-top: 0; }
+
+.list_contact {
+    background: var(--np-bg);
+    padding: 30px;
+    border: 1px solid var(--np-line);
+    margin-top: 20px;
+}
+.list_contact+p { margin-top: 20px; }
+.list_contact li { font-size: var(--fs-body); color: var(--np-sub); line-height: 28px; }
+.list_contact li strong { display: inline-block; width: 80px; color: var(--np-text); }
+
+/* ---- copyright.html 전용 ---- */
+.box_quote {
+    background: var(--np-bg);
+    padding: 20px 24px;
+    border-radius: 0 4px 4px 0;
+    margin: 25px 0;
+}
+.source_line { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.badge_source {
+    display: inline-block;
+    padding: 2px 10px;
+    background: var(--np-dark);
+    color: #fff;
+    font-size: var(--fs-body);
+    font-weight: 500;
+    border-radius: 4px;
+}
+.source_text { font-size: var(--fs-body); font-weight: bold; color: var(--np-text); letter-spacing: -0.3px; }
+.box_quote .txt_desc { font-size: var(--fs-body); color: var(--np-mute); }
+
+.table_header_box {
+    text-align: center;
+    margin: 50px 0 25px;
+    background: var(--np-bg);
+    padding: 20px;
+    border: 1px solid var(--np-line);
+}
+.table_header_box h3 { font-size: var(--fs-subhead); font-weight: bold; color: var(--np-text); margin-bottom: 6px; }
+.table_header_box p { font-size: var(--fs-body); color: var(--np-mute); }
+
+.table_menu_tit {
+    font-size: var(--fs-18);
+    font-weight: 700;
+    color: var(--np-text);
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 12px;
+}
+.table_menu_tit:first-of-type {
+    margin-top: 24px;
+}
+.wrap_table { width: 100%; overflow-x: auto; margin-bottom: 10px; }
+.tbl_policy { width: 100%; border-collapse: collapse; min-width: 600px; }
+.tbl_policy th {
+    background: var(--np-bg);
+    padding: 12px 15px;
+    border-top: 2px solid var(--np-text);
+    border-bottom: 1px solid var(--np-line);
+    font-size: var(--fs-body);
+    color: var(--np-text);
+    font-weight: bold;
+    text-align: center;
+}
+.tbl_policy td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--np-line);
+    font-size: var(--fs-body);
+    color: var(--np-sub);
+    text-align: center;
+    vertical-align: middle;
+}
+.tbl_policy td.align_l { text-align: left; }
+.tbl_policy tbody tr:hover td { background-color: var(--np-bg); }
+.txt_ref { 
+    display: block; 
+    font-size: var(--fs-body); 
+    color: var(--np-mute); 
+    margin-top: 12px; 
+    margin-bottom: 0; 
+}
+/* ---- email.html · distress.html 공통 ---- */
+.box_notice {
+    padding: 15px 0;
+    border-top: 1px solid var(--np-line);
+    border-bottom: 1px solid var(--np-line);
+    margin: 25px 0;
+    font-size: var(--fs-body);
+    color: var(--np-text);
+    line-height: 1.6;
+}
+
+.list_link { margin-top: 25px; }
+.list_link li { font-size: var(--fs-body); line-height: 28px; color: var(--np-sub); }
+.list_link li a { color: var(--np-primary);  }
+
+.date_notice { margin-top: 30px; font-size: var(--fs-body); font-weight: bold; color: var(--np-text); }
+
+/* ---- privacy.html 전용 ---- */
+.intro_privacy { font-size: var(--fs-body); line-height: 26px; color: var(--np-text); }
+
+.wrap_menu { margin-top: 40px; padding: 30px 40px; border: 1px solid var(--np-text); }
+.wrap_menu .tit_menu { font-size: var(--fs-subhead); font-weight: bold; color: var(--np-text); margin-bottom: 20px; }
+.wrap_menu .list_menu2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px 40px; }
+.wrap_menu .list_menu2 .link_menu { display: block; font-size: var(--fs-body); color: var(--np-sub); line-height: 1.6; }
+.wrap_menu .list_menu2 .link_menu:hover { font-weight: bold;  color: var(--np-primary); }
+
+/* ---- terms.html 전용 ---- */
+.wrap_chapter_menu {
+    overflow: hidden;
+    margin-top: 30px;
+    padding: 19px 0 21px;
+    border: 1px solid var(--np-line);
+    display: flex;
+    background: var(--np-bg);
+}
+.wrap_chapter_menu .list_menu { flex: 1; padding: 0 40px; box-sizing: border-box; }
+.wrap_chapter_menu .list_menu > li + li { margin-top: 8px; }
+.wrap_chapter_menu .list_menu .link_menu {
+    display: block;
+    line-height: 34px;
+    color: var(--np-text);
+}
+.wrap_chapter_menu .list_submenu { padding-left: 25px; }
+.wrap_chapter_menu .list_submenu .link_menu { font-size: var(--fs-body); line-height: 26px; color: var(--np-sub); }
+.wrap_chapter_menu .list_menu > li > .link_menu:hover,
+.wrap_chapter_menu .list_submenu li > .link_menu:hover {
+    font-weight: bold;
+    
+    color: var(--np-primary);
+}
+
+.tit_policy {
+    display: block;
+    margin-bottom: 14px;
+    padding-top: 55px;
+    font-weight: bold;
+    font-size: var(--fs-heading);
+    line-height: 26px;
+    color: var(--np-text);
+}
+.wrap_policy .tit_policy { margin-top: 55px; border-top: 1px solid var(--np-line); }
+.wrap_policy .tit_policy:first-child { margin-top: 0; border-top: 0 none; }
+
+/* ---- customer 전용: 페이지 헤더 (다운로드/인쇄 버튼) ---- */
+.content_header {
+    padding: 40px 0 24px;
+    border-bottom: 2px solid var(--np-text);
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 32px;
+    padding-bottom: 16px;
+}
+
+.content_header .tit_util {
+    font-size: var(--fs-heading);
+    font-weight: 800;
+    color: var(--np-text);
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.box_util {
+    display: flex;
+    gap: 8px;
+}
+
+.btn_util {
+    padding: 4px 0;
+    font-size: var(--fs-14);
+    font-weight: 500;
+    color: var(--np-mute);
+    transition: color 0.2s ease;
+}
+
+.btn_util:hover {
+    color: var(--np-primary);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    /* 고객센터 헤더 */
+    .wrap_head .inner {
+        height: 56px;
+        padding-left: var(--gutter-mobile);
+        padding-right: var(--gutter-mobile);
+    }
+    .tit_logo .txt_logo_sub { display: none; }
+    main { margin-top: 56px; }
+
+    /* 탭 메뉴 */
+    .tab_policy li { flex: 1 1 33.33%; min-width: 33.33%; }
+
+    /* privacy.html 전용 */
+    .wrap_menu .list_menu2 { grid-template-columns: 1fr; gap: 12px; }
+    .wrap_menu { padding: 20px; }
+
+    /* terms.html 전용 */
+    .wrap_chapter_menu { flex-direction: column; padding: 15px 0; }
+    .wrap_chapter_menu .list_menu { padding: 10px 20px; }
+    .wrap_chapter_menu .list_menu + .list_menu {
+        border-top: 1px dashed var(--np-line);
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+
+    /* 페이지 헤더(다운로드/인쇄) 및 공용 컴포넌트 */
+    .content_header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .box_util { display: none; }
+
+    .sec_customer { padding: 0 0 60px; }
+
+    .list_contact { padding: 20px; }
+    .list_contact li strong { width: 60px; }
+
+    .box_quote { padding: 16px; margin: 20px 0; }
+
+    .table_header_box { margin: 32px 0 20px; padding: 16px; }
+    .table_menu_tit {font-size: var(--fs-body); }
+
+    .tit_policy { padding-top: 32px; }
+    .wrap_policy .tit_policy { margin-top: 32px; }
+
+    .list_2depth_noti { margin-top: 40px; }
+}
